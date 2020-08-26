@@ -1,5 +1,5 @@
 // создание ссылки
-export const inviteLinkGenerator = (inviteToken: string) =>
+export const inviteLinkGenerate = (inviteToken: string) =>
   `https://ui-root.suppliers-portal-eu.svc.k8s.test/wb-eu-invites?inviteToken=${inviteToken}`;
 
 // routePath для роутера
