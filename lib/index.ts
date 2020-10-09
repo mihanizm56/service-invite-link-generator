@@ -1,8 +1,10 @@
 // создание ссылки
 export const inviteLinkGenerate = (inviteToken: string) => {
-  const url = window.location.href.replace(/(.*)(\/login)$/, (_, $1) => $1);
+  const url = new URL(window.location.href);
 
-  return `${url}/wb-eu-invites?inviteToken=${inviteToken}`;
+  const origin = url.origin;
+
+  return `${origin}/wb-eu-invites?inviteToken=${inviteToken}`;
 };
 
 // routePath для роутера
