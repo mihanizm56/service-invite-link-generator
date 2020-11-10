@@ -4,11 +4,11 @@ export const inviteLinkGenerate = (inviteToken: string) => {
 
   const origin = url.origin;
 
-  return `${origin}/wb-eu-invites?inviteToken=${inviteToken}`;
+  return `${origin}/wb-eu-invites?invite_token=${inviteToken}`;
 };
 
 // routePath для роутера
-export const inviteRoutePath = '/wb-eu-invites?inviteToken';
+export const inviteRoutePath = '/wb-eu-invites?invite_token';
 
 // routeName для роутера
 export const invitePageName = 'wb-eu-invites';
