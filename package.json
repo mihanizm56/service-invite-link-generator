@@ -1,12 +1,12 @@
 {
-  "name": "@wildberries/service-invite-link-generator",
-  "version": "0.0.5",
-  "description": "invite-link-generator",
+  "name": "@wildberries/service-logger",
+  "version": "0.0.1-beta.0",
+  "description": "utils for logging",
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": " rm -fr ./dist && tsc -p tsconfig.json",
+    "build": "rm -fr ./dist && tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts --fix",
     "commit": "git add . && git commit --no-edit",
     "release": "npm run commit && git push && npm publish --access=public",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mihanizm56/redux-core-modules#readme",
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
+    "@types/hapi__joi": "17.1.6",
     "@types/node": "14.0.5",
     "@types/redux": "3.6.0",
     "@typescript-eslint/eslint-plugin": "2.5.0",
@@ -51,5 +52,9 @@
     "cz-customizable": {
       "config": "config/git/commitizen.js"
     }
+  },
+  "dependencies": {
+    "@mihanizm56/fetch-api": "3.6.3",
+    "@hapi/joi": "17.1.1"
   }
 }
