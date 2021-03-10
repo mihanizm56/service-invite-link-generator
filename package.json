@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/service-logger",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "utils for logging",
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",

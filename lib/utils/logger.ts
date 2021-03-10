@@ -1,5 +1,5 @@
-import { loggerRequest } from '@/api/logger-request';
-import { LoggerMainParamsType } from '@/types';
+import { loggerRequest } from '../api/logger-request';
+import { LoggerMainParamsType } from '../types';
 import { createLoggerRequestOptions } from './create-logger-request-options';
 
 type ParamsType = {

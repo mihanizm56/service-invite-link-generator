@@ -1,5 +1,5 @@
 import { IRequestParams } from '@mihanizm56/fetch-api';
-import { LoggerServiceParams } from '@/types';
+import { LoggerServiceParams } from '../../types';
 import { responseSchema } from './response-schema';
 
 export type RequestParamsType = {
