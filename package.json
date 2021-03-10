@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/service-logger",
-  "version": "0.0.1-beta.0",
+  "version": "0.0.1-beta.1",
   "description": "utils for logging",
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",
@@ -54,7 +54,7 @@
     }
   },
   "dependencies": {
-    "@mihanizm56/fetch-api": "3.6.3",
+    "@mihanizm56/fetch-api": "3.7.0-beta.3",
     "@hapi/joi": "17.1.1"
   }
 }

@@ -15,4 +15,5 @@ export const makeRequestConfig = ({
   responseSchema,
   body: { params },
   isErrorTextStraightToOutput: true,
+  tracingDisabled: true,
 });
