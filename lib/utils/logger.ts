@@ -9,6 +9,11 @@ type ParamsType = {
 export const fetchLogger = ({ loggerEndpoint: endpoint }: ParamsType) => async (
   loggerMainParams: LoggerMainParamsType,
 ) => {
+  // if there is no error - do not make logging
+  if (!loggerMainParams.error) {
+    return;
+  }
+
   const params = createLoggerRequestOptions(loggerMainParams);
 
   try {
