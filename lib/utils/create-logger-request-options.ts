@@ -1,4 +1,5 @@
 import { LoggerMainParamsType, LoggerServiceParams } from '../types';
+import { getFilteredCookies } from './get-filtered-cookies';
 
 export const createLoggerRequestOptions = ({
   endpoint,
@@ -13,12 +14,15 @@ export const createLoggerRequestOptions = ({
   errorType,
   code,
 }: LoggerMainParamsType): LoggerServiceParams => {
+  const filteredRequestCookies = getFilteredCookies(requestCookies);
+  // const filteredRequestCookies = getFilteredCookies(requestCookies);
+
   const userRequestParams = {
     endpoint,
     method,
     requestBody,
     requestHeaders,
-    requestCookies,
+    requestCookies: filteredRequestCookies,
   };
 
   const userResponseParams = {
