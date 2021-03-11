@@ -1,10 +1,11 @@
+import { JSONRPCRequest } from '@mihanizm56/fetch-api';
 import { loggerRequest } from '../api/logger-request';
 import { LoggerMainParamsType } from '../types';
 import { createLoggerRequestOptions } from './create-logger-request-options';
 
 type ParamsType = {
   loggerEndpoint: string;
-  Requestor: any;
+  Requestor: typeof JSONRPCRequest;
 };
 
 export const fetchLogger = ({

@@ -19,20 +19,3 @@ export type LoggerServiceParams = {
   userResponse: string;
   formattedResponse: string;
 };
-
-// export class IRequestClass {
-//   makeRequest:()=>{
-
-//   }
-// }
-
-export type RequestorParamsType = {
-  headers?: {
-    [key: string]: string;
-  };
-  body?: any;
-  endpoint: string;
-  responseSchema: any;
-  isErrorTextStraightToOutput: boolean;
-  tracingDisabled: boolean;
-};
