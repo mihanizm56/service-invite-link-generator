@@ -30,7 +30,6 @@ export const createLoggerRequestOptions = ({
   const userResponseParams = {
     response,
     responseBody,
-    formattedResponse,
     responseHeaders: filteredResponseHeaders,
     code,
   };
@@ -39,5 +38,6 @@ export const createLoggerRequestOptions = ({
     errorType,
     userRequest: JSON.stringify(userRequestParams),
     userResponse: JSON.stringify(userResponseParams),
+    formattedResponse: JSON.stringify(formattedResponse),
   };
 };

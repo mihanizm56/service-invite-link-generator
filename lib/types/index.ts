@@ -17,4 +17,5 @@ export type LoggerServiceParams = {
   errorType: string;
   userRequest: string;
   userResponse: string;
+  formattedResponse: string;
 };
