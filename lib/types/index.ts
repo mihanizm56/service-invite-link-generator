@@ -1,20 +1,7 @@
-export type LoggerMainParamsType = {
-  endpoint: string;
-  method: Pick<RequestInit, 'method'>;
-  requestBody: Pick<RequestInit, 'body'>;
-  requestHeaders: Record<string, string>;
-  requestCookies: string;
-  response: Response;
-  responseBody: any; // because we dont know about response body type yet
-  formattedResponse: any; // because we dont know about response body type yet
-  responseHeaders: Record<string, string>;
-  error: boolean;
-  errorType: string;
-  code: number;
-};
+import { ErrorTracingType } from '@mihanizm56/fetch-api';
 
 export type LoggerServiceParams = {
-  errorType: string;
+  errorType: ErrorTracingType;
   userRequest: string;
   userResponse: string;
   formattedResponse: string;

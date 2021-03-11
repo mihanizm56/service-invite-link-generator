@@ -1,4 +1,5 @@
-import { LoggerMainParamsType, LoggerServiceParams } from '../types';
+import { SetResponseTrackCallbackOptions } from '@mihanizm56/fetch-api';
+import { LoggerServiceParams } from '../types';
 import { getFilteredCookies } from './get-filtered-cookies';
 import { getFilteredHeaders } from './get-filtered-headers';
 
@@ -14,7 +15,7 @@ export const createLoggerRequestOptions = ({
   responseHeaders,
   errorType,
   code,
-}: LoggerMainParamsType): LoggerServiceParams => {
+}: SetResponseTrackCallbackOptions): LoggerServiceParams => {
   const filteredRequestCookies = getFilteredCookies(requestCookies);
   const filteredRequestHeaders = getFilteredHeaders(requestHeaders);
   const filteredResponseHeaders = getFilteredHeaders(responseHeaders);

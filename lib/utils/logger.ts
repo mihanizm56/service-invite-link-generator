@@ -1,6 +1,8 @@
-import { JSONRPCRequest } from '@mihanizm56/fetch-api';
+import {
+  JSONRPCRequest,
+  SetResponseTrackCallbackOptions,
+} from '@mihanizm56/fetch-api';
 import { loggerRequest } from '../api/logger-request';
-import { LoggerMainParamsType } from '../types';
 import { createLoggerRequestOptions } from './create-logger-request-options';
 
 type ParamsType = {
@@ -11,7 +13,7 @@ type ParamsType = {
 export const fetchLogger = ({
   loggerEndpoint: endpoint,
   Requestor,
-}: ParamsType) => async (loggerMainParams: LoggerMainParamsType) => {
+}: ParamsType) => async (loggerMainParams: SetResponseTrackCallbackOptions) => {
   try {
     // if there is no error - do not make logging
     if (!loggerMainParams.error) {
