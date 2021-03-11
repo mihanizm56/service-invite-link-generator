@@ -1,5 +1,4 @@
-import { IRequestParams } from '@mihanizm56/fetch-api';
-import { LoggerServiceParams } from '../../types';
+import { LoggerServiceParams, RequestorParamsType } from '../../types';
 import { responseSchema } from './response-schema';
 
 export type RequestParamsType = {
@@ -10,7 +9,7 @@ export type RequestParamsType = {
 export const makeRequestConfig = ({
   params,
   endpoint,
-}: RequestParamsType): IRequestParams => ({
+}: RequestParamsType): RequestorParamsType => ({
   endpoint,
   responseSchema,
   body: { params },

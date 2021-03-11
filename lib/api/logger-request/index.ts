@@ -1,5 +1,16 @@
-import { IResponse, JSONRPCRequest } from '@mihanizm56/fetch-api';
 import { makeRequestConfig, RequestParamsType } from './make-request-config';
 
-export const loggerRequest = (params: RequestParamsType): Promise<IResponse> =>
-  new JSONRPCRequest().makeRequest(makeRequestConfig(params));
+type OutputType = {
+  error: boolean;
+  errorText: string;
+  data: any;
+  additionalErrors: Record<string, any> | null;
+  code: number;
+};
+
+export const loggerRequest = ({
+  params,
+  Requestor,
+  endpoint,
+}: RequestParamsType & { Requestor: any }): Promise<OutputType> =>
+  new Requestor().makeRequest(makeRequestConfig({ endpoint, params }));

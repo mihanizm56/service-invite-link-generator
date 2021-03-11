@@ -4,11 +4,13 @@ import { createLoggerRequestOptions } from './create-logger-request-options';
 
 type ParamsType = {
   loggerEndpoint: string;
+  Requestor: any;
 };
 
-export const fetchLogger = ({ loggerEndpoint: endpoint }: ParamsType) => async (
-  loggerMainParams: LoggerMainParamsType,
-) => {
+export const fetchLogger = ({
+  loggerEndpoint: endpoint,
+  Requestor,
+}: ParamsType) => async (loggerMainParams: LoggerMainParamsType) => {
   try {
     // if there is no error - do not make logging
     if (!loggerMainParams.error) {
@@ -20,6 +22,7 @@ export const fetchLogger = ({ loggerEndpoint: endpoint }: ParamsType) => async (
     const { error, errorText } = await loggerRequest({
       params,
       endpoint,
+      Requestor,
     });
 
     if (error) {
