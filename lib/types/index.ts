@@ -8,7 +8,6 @@ export type LoggerMainParamsType = {
   responseBody: any; // because we dont know about response body type yet
   formattedResponse: any; // because we dont know about response body type yet
   responseHeaders: Record<string, string>;
-  responseCookies: Record<string, string>;
   error: boolean;
   errorType: string;
   code: number;
