@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/service-logger",
-  "version": "0.0.1-beta.6",
+  "version": "0.0.1-beta.8",
   "description": "utils for logging",
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",
@@ -21,6 +21,10 @@
     "url": "https://github.com/mihanizm56/redux-core-modules/issues"
   },
   "homepage": "https://github.com/mihanizm56/redux-core-modules#readme",
+  "dependencies": {
+    "@mihanizm56/fetch-api": "3.7.0-beta.6",
+    "@hapi/joi": "17.1.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
     "@types/hapi__joi": "17.1.6",
@@ -52,9 +56,5 @@
     "cz-customizable": {
       "config": "config/git/commitizen.js"
     }
-  },
-  "dependencies": {
-    "@mihanizm56/fetch-api": "3.7.0-beta.3",
-    "@hapi/joi": "17.1.1"
   }
 }

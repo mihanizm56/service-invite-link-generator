@@ -1,3 +1,5 @@
+import { getMaskedString } from './get-masked-string';
+
 const WHITE_LIST = ['x-supplier-id'];
 
 export const getFilteredCookies = (pureCookies: string) => {
@@ -8,11 +10,9 @@ export const getFilteredCookies = (pureCookies: string) => {
         return `${p1}=${p2}${p3}`;
       }
 
-      const lenght = p2.length > 8 ? p2.length - 8 : 0;
-      const firstPart = p2.slice(0, 4);
-      const lastPart = p2.slice(-4);
+      const maskedString = getMaskedString(p2);
 
-      return `${p1}=${firstPart}(${lenght})${lastPart}${p3}`;
+      return `${p1}=${maskedString}${p3}`;
     },
   );
 };

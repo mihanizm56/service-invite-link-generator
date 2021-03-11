@@ -1,5 +1,6 @@
 import { LoggerMainParamsType, LoggerServiceParams } from '../types';
 import { getFilteredCookies } from './get-filtered-cookies';
+import { getFilteredHeaders } from './get-filtered-headers';
 
 export const createLoggerRequestOptions = ({
   endpoint,
@@ -15,13 +16,14 @@ export const createLoggerRequestOptions = ({
   code,
 }: LoggerMainParamsType): LoggerServiceParams => {
   const filteredRequestCookies = getFilteredCookies(requestCookies);
-  // const filteredRequestCookies = getFilteredCookies(requestCookies);
+  const filteredRequestHeaders = getFilteredHeaders(requestHeaders);
+  const filteredResponseHeaders = getFilteredHeaders(responseHeaders);
 
   const userRequestParams = {
     endpoint,
     method,
     requestBody,
-    requestHeaders,
+    requestHeaders: filteredRequestHeaders,
     requestCookies: filteredRequestCookies,
   };
 
@@ -29,7 +31,7 @@ export const createLoggerRequestOptions = ({
     response,
     responseBody,
     formattedResponse,
-    responseHeaders,
+    responseHeaders: filteredResponseHeaders,
     code,
   };
 

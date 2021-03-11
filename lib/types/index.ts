@@ -2,7 +2,7 @@ export type LoggerMainParamsType = {
   endpoint: string;
   method: Pick<RequestInit, 'method'>;
   requestBody: Pick<RequestInit, 'body'>;
-  requestHeaders: Pick<RequestInit, 'headers'>;
+  requestHeaders: Record<string, string>;
   requestCookies: string;
   response: Response;
   responseBody: any; // because we dont know about response body type yet
