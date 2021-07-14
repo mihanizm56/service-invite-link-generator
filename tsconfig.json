@@ -15,14 +15,9 @@
     "esModuleInterop": true,
     "strictFunctionTypes": false,
     "moduleResolution": "node",
-    "downlevelIteration":true,
+    "downlevelIteration": true,
     "baseUrl": "./",
     "jsx": "react",
-    "paths": {
-      "@/*": [
-        "lib/*"
-      ]
-    }
   },
   "exclude": [
     "node_modules",
