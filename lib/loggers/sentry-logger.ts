@@ -35,7 +35,6 @@ export class SentryLogger extends ILogger<
   SendSentryEventParamsType
 > {
   release?: string;
-  dsn?: string;
   initialized = false;
 
   init = (params: InitSentryParams) => {
@@ -47,7 +46,6 @@ export class SentryLogger extends ILogger<
     Sentry.init(config);
 
     this.release = params.release;
-    this.dsn = params.dsn;
     this.initialized = true;
   };
 
@@ -59,6 +57,10 @@ export class SentryLogger extends ILogger<
     request,
     extra,
   }: SendSentryEventParamsType) => {
+    if (!this.initialized) {
+      return;
+    }
+
     const severityLevel = (Severity[level] || Severity.Error) as Severity;
 
     Sentry.captureEvent({
