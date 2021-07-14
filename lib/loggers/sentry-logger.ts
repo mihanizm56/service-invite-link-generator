@@ -21,6 +21,13 @@ type SendSentryEventParamsType = {
   level: keyof typeof Severity;
   request?: Record<string, any>;
   release?: string;
+  extra?: Record<string, any>;
+};
+
+type SendErrorParamsType = {
+  project: string;
+  error: any;
+  message: string;
 };
 
 export class SentryLogger extends ILogger<
@@ -50,6 +57,7 @@ export class SentryLogger extends ILogger<
     responseData,
     level,
     request,
+    extra,
   }: SendSentryEventParamsType) => {
     const severityLevel = (Severity[level] || Severity.Error) as Severity;
 
@@ -64,6 +72,7 @@ export class SentryLogger extends ILogger<
       },
       tags,
       extra: {
+        ...extra,
         response: JSON.stringify(responseData, null, 2),
         origin: window.origin,
       },
@@ -71,11 +80,14 @@ export class SentryLogger extends ILogger<
     });
   };
 
-  sendError = ({ project, error }: { project: string; error: any }) => {
+  sendError = ({ project, message, error }: SendErrorParamsType) => {
     if (error instanceof Error) {
       this.sendEvent({
-        message: `@${project}/${error.message}`,
+        message: `@${project}/${message}`,
         level: 'Error',
+        extra: {
+          error,
+        },
       });
 
       return;
@@ -85,6 +97,9 @@ export class SentryLogger extends ILogger<
       this.sendEvent({
         message: `@${project}/${error}`,
         level: 'Error',
+        extra: {
+          error,
+        },
       });
     }
   };
